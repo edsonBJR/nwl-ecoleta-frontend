@@ -7,4 +7,4 @@ Trata-se de um sistema para informar sobre pontos de coletas de lixo próximo da
 
 Este repositório contem os arquivo do Frontend
 
-Desenvolvido utilizando HTML5, CSS3, Javascript.
+Desenvolvido utilizando HTML5, CSS3, Javascript, Nodejs, Express, Nunjucks e Sqlite3

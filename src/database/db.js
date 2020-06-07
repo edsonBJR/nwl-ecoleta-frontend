@@ -4,8 +4,11 @@ const sqlite3 = require("sqlite3").verbose()
 // criar o objeto que irá fazer operações banco de dados
 const db = new sqlite3.Database("./src/database/database.db")
 
+// Exportando o objeto de conexão como banco para acessa-lo de outros locais do projeto
+module.exports = db
+
 // utilizar o objeto de banco de dados para nossas operações
-// db.serialize(() => {
+db.serialize(() => {
 
     // Com comandos SQL
 
@@ -54,7 +57,7 @@ const db = new sqlite3.Database("./src/database/database.db")
     // db.run(query, values, afterInsertData)
 
     // 3 - Consultar dados na tabela
-    // db.all(`SELECT name FROM places`, function(err, rows) {
+    // db.all(`SELECT * FROM places`, function(err, rows) {
     //     if(err) {
     //         return console.log(err) 
     //     }
@@ -63,7 +66,7 @@ const db = new sqlite3.Database("./src/database/database.db")
     // })
 
     // 4 - Deletear dados na tabela
-    // db.run(`DELETE FROM places WHERE id = ?`, [1], function(err) {
+    // db.run(`DELETE FROM places WHERE id = ?`, [2], function(err) {
     //     if(err) {
     //         return console.log(err) 
     //     }
@@ -71,4 +74,4 @@ const db = new sqlite3.Database("./src/database/database.db")
     //     console.log("Registro deletado com sucesso!")
     // })
 
-// })
+})
